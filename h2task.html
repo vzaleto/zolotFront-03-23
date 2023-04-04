@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+<!-- <form class="" id="form-ticket" >
+	<div>
+		<input type="" name="named" value="" class="">
+	</div>
+	<div>
+		<input type="" name="age" value="">
+	</div>
+	<div>
+		<input type="" name="weight" value="">
+	</div>
+</form> -->
+<div class="wrap "  style="margin: 100px 0 0 0;" >
+<div class="container" >
+<div class="row">
+    <div class="col s12">
+      <div class="row">
+      	<form id="form-ticket">
+        <div class="input-field col s12">
+          <!-- <i class="material-icons prefix">textsms</i> -->
+          <input type="text" id="autocomplete-input" class="autocomplete" name="named">
+          <label for="autocomplete-input">Autocomplete</label>
+        </div>
+        <div class="input-field col s12">
+          <!-- <i class="material-icons prefix">textsms</i> -->
+          <input type="text" id="autocomplete-input" class="autocomplete"  name="age">
+          <label for="autocomplete-input">Autocomplete</label>
+        </div>
+        <div class="input-field col s12">
+          <!-- <i class="material-icons prefix">textsms</i> -->
+          <input type="text" id="autocomplete-input" class="autocomplete" name="weight">
+          <label for="autocomplete-input">Autocomplete</label>
+        </div>
+        <div> <a class="waves-effect waves-light btn" id="btn">button</a> </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div style="text-align: center;"  >
+	<h2>resutl</h2>
+<div id="show-form" >
+	
+</div>
+</div>
+
+
+<div>
+	<h2>result numb</h2>
+	<div class="result-namb" ></div>
+</div>
+
+<script type="text/javascript">
+
+let submitForm = document.querySelector('#btn');
+
+let showForm =  document.querySelector('#show-form');
+	
+
+let inputName = document.querySelectorAll('input');
+
+let resNumb = document.querySelector('.result-namb');
+
+
+function getDataInput (){
+
+let g = '';
+
+	inputName.forEach(function(elem){
+
+			console.log(elem.name )
+	
+		g += `${elem.value}` + ' ';
+
+		
+	});
+
+	showForm.innerHTML = g;
+
+}
+
+
+
+submitForm.addEventListener('click',getDataInput);
+
+
+
+
+
+let numbOn = 12345;
+
+let stringOn  = numbOn + "";
+
+let arrStr = stringOn.split('');
+
+for(let i =  0;i < arrStr.length;i++ ){
+
+	resNumb.innerHTML += (`${arrStr[i]} ` - " ") + " ";
+}
+
+
+
+
+</script>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
