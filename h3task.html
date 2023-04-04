@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<title></title>
+</head>
+<body>
+
+
+<div class="wrap "  style="margin: 100px 0 0 0;" >
+<div class="container" >
+<div class="row">
+    <div class="col s6">
+      <div class="row">
+      	<form id="form-ticket">
+        <div class="input-field col s2">
+          <!-- <i class="material-icons prefix">textsms</i> -->
+          <input type="text" id="autocomplete-input" class="autocomplete numOne" name="numOne" value="">
+          <label for="autocomplete-input">numb1</label>
+        </div>
+        <div class="input-field col s2">
+          <!-- <i class="material-icons prefix">textsms</i> -->
+          <input type="text" id="autocomplete-input1" class="autocomplete eventdiferent"  name="event" value="">
+          <label for="autocomplete-input1">+ / * -</label>
+        </div>
+         <div class="input-field col s2">
+          <!-- <i class="material-icons prefix">textsms</i> -->
+          <input type="text" id="autocomplete-input2" class="autocomplete numTwo"  name="numTwo" value="">
+          <label for="autocomplete-input2">numb2</label>
+        </div>
+        <div class="input-field col s2">
+        <div> <a class="waves-effect waves-light btn" id="btn">=</a> </div>
+      </div>
+         <div class="input-field col s2">
+          <!-- <i class="material-icons prefix">textsms</i> -->
+          <input type="text" id="autocomplete-input" class="autocomplete result"  name="numTwo" value="">
+          <label for="autocomplete-input"></label>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+	
+
+
+
+let btn = document.querySelector('#btn');
+
+	
+	
+
+	let result = document.querySelector('.result');
+
+function kalkulyator(){
+let eventCalk = document.querySelector('.eventdiferent').value;
+
+let numOne = document.querySelector('.numOne').value;
+let numTwo = document.querySelector('.numTwo').value;
+
+let  pol = "";
+
+switch(eventCalk){
+
+
+case "/":
+
+ pol = numOne / Number(numTwo);
+result.value = pol 
+	break;
+
+case "+":
+
+ pol =  Number(numOne) + Number(numTwo);
+result.value = pol 
+	break;
+
+case "-":
+
+ pol =  numOne - numTwo;
+result.value = pol 
+	break;
+
+case "*":
+
+ pol =  numOne * numTwo;
+result.value = pol 
+	break;
+}
+
+
+}
+
+btn.addEventListener('click',kalkulyator)
+
+
+</script>
+  <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
