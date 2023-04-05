@@ -7,18 +7,6 @@
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-
-<!-- <form class="" id="form-ticket" >
-	<div>
-		<input type="" name="named" value="" class="">
-	</div>
-	<div>
-		<input type="" name="age" value="">
-	</div>
-	<div>
-		<input type="" name="weight" value="">
-	</div>
-</form> -->
 <div class="wrap "  style="margin: 100px 0 0 0;" >
 <div class="container" >
 <div class="row">
@@ -63,59 +51,13 @@
 
 <script type="text/javascript">
 
-let submitForm = document.querySelector('#btn');
-
-let showForm =  document.querySelector('#show-form');
-	
-
-let inputName = document.querySelectorAll('input');
-
-let resNumb = document.querySelector('.result-namb');
-
-
-function getDataInput (){
-
-let g = '';
-
-	inputName.forEach(function(elem){
-
-			console.log(elem.name )
-	
-		g += `${elem.value}` + ' ';
-
-		
-	});
-
-	showForm.innerHTML = g;
-
-}
-
-
-
-submitForm.addEventListener('click',getDataInput);
-
-
-
-
-
-let numbOn = 12345;
-
-let stringOn  = numbOn + "";
-
-let arrStr = stringOn.split('');
-
-for(let i =  0;i < arrStr.length;i++ ){
-
-	resNumb.innerHTML += (`${arrStr[i]} ` - " ") + " ";
-}
-
-
-
 
 </script>
 
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="main.js"></script>
+
 </body>
 </html>
