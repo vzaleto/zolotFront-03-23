@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="style.css">
+
+   
+</head>
+<body>
+<div class="run" ></div>
+
+<div class="container" >
+<div class="row">
+    <div class="col s6">
+      <div class="row">
+        <div class="title"><h5>Writte your birsday</h5> </div>
+        <div class="input-field col s12">
+          <input type="text" id="autocomplete-input" class="autocomplete data-person birsday" value="">
+          <label for="autocomplete-input"></label>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col s6">
+      <div class="row">
+            <div class="title"><h5> Writte your city </h5></div>
+        <div class="input-field col s12">
+          <input type="text" id="autocomplete-input" class="autocomplete data-person city" class="" value="">
+          <label for="autocomplete-input"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col s6">
+      <div class="row">
+            <div class="title"><h5> what kinde sport do you like? </h5></div>
+        <div class="input-field col s12">
+         <!--  <input type="text" id="autocomplete-input" class="autocomplete data-person sport" class="" value=""> -->
+          <select class="browser-default" >
+              <option value="" disabled selected>Choose your option</option>
+            <option value="football">football</option>
+                <option value="basketball" >basketball</option>
+                    <option value="tennis" >tennis</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col s4">
+      <div class="row">
+        <div class="input-field col s4">
+          
+               <a class="waves-effect waves-light btn" id="btn">submit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+<div class="overlay" ></div>
+
+<div class="modal">
+    <div class="close" >x</div>
+    <div class="modal-inner" >
+        <div>
+            <h6>Your age </h6>
+        <div class="modal-birsday" ></div>
+        </div>
+        <div>
+            <h6> Your sity </h6>
+        <div class="modal-city" ></div>
+        </div>
+        <div>
+            <h6> Your Sport </h6>
+        <div class="modal-sport" ></div>
+        </div>
+    </div>
+</div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <script src="main.js"></script>
+
+    
+</body>
+</html>
