@@ -1,20 +1,53 @@
-let hoverBlock = document.querySelector('.foeld-text');
+let table = document.createElement('table');
 
-let apearsBlock = document.querySelector('.apears-box');
+let app = document.querySelector('#app');
 
-function heandler(event){
 
-    apearsBlock.classList.add('show');
+app.appendChild(table);
 
+function createTr(){
+    let tr = document.createElement('tr');
+    return tr;
 }
 
-function heandlerOut(){
+function crtTd (){
 
-    apearsBlock.classList.remove('show');
+    let td = document.createElement('td'); 
 
+    return td
 }
 
-hoverBlock.onmouseout = heandlerOut;
 
-hoverBlock.onmouseover = heandler;
+let i = 0;
+
+while(i < 10){
+
+    i++ ;
+
+    table.appendChild(createTr());
+}
+
+let newTr = document.querySelectorAll('tr');
+
+
+newTr.forEach(function(elem){
+
+    let y = 0;
+
+    while(y < 10){
+
+        y++ ;
+
+        elem.appendChild(crtTd());
+
+    }
     
+})
+
+let newTd = document.querySelectorAll('td');
+
+newTd.forEach(function(elem,i){
+
+    elem.innerHTML = i + 1;
+
+})
