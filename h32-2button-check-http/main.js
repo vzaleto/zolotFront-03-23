@@ -30,5 +30,5 @@ function setNewAttr(array, linkAtribyt){
 
 }
 
-insertLInk.addEventListener('click', checkHttps)
+insertLInk.addEventListener('click', checkHttps);
 
