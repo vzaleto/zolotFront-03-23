@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ <title></title>
+
+</head>
+<body>
+<div class=" wrapp" >
+ <div class="wrapp-category" id="" >
+	  <div id="1" atr="1" class="category phone" atr="1"  >phone </div>
+	  <div id="2"         class="category microvolnovka" >microvolnovka </div>
+	  <div id="3"         class="category boll" >boll </div>
+	  <div id="4"         class="category drink" >drink </div>
+ </div>
+ <div class="wrapp-tovari" >
+  <div class="tovary nine phone" c_id="1" frf="1" >
+  	<h2> phone </h2>
+	   <div class="singl-tovar" st_id="1" >iphone</div>
+	   <div class="singl-tovar" st_id="2" >samsung</div>
+	   <div class="singl-tovar" st_id="3" >xiomi</div>
+  </div>
+  <div class="tovary nine pilesos" c_id="2" >
+  	<h2> pilesos </h2>
+	   <div class="singl-tovar" st_id="4" >mezy</div>
+	   <div class="singl-tovar" st_id="5" >bosh</div>
+	   <div class="singl-tovar" st_id="6" >samsung</div>
+  </div>
+  <div class="tovary nine boll" c_id="3" >
+  	<h2> boll </h2>
+	   <div class="singl-tovar" st_id="7">danlop</div>
+	   <div class="singl-tovar" st_id="8">wellson</div>
+	   <div class="singl-tovar" st_id="9">head</div>
+  </div>
+  <div class="tovary nine drink" c_id="4" >
+  	<h2> drink </h2>
+	   <div class="singl-tovar" st_id="10" >vodka</div>
+	   <div class="singl-tovar" st_id="11" >pivo</div>
+	   <div class="singl-tovar" st_id="12" >vino</div>
+  </div>
+ </div>
+ <div class="wrapp-description" >
+ 	<div d_id="1"  class="descrioption nine" >
+ 		<span>iphone 15</span>
+ 		<button class="button">by</button>
+ 	</div>
+ 	 <div d_id="2"  class="descrioption nine" >
+ 		<span>samsung 10</span>
+ 		<button class="button">by</button>
+ 	</div>
+ 	 <div d_id="3"  class="descrioption nine" >
+ 		<span>xiome 13</span>
+ 		<button class="button">by</button>
+ 	</div>
+ 	<div d_id="4"  class="descrioption nine" >
+ 		<span>robot pilesos mezu</span>
+ 		<button class="button">by</button>
+ 	</div>
+ 	<div d_id="5"  class="descrioption nine" >
+ 		<span>heand pilesos bosh</span>
+ 		<button class="button" >by</button>
+ 	</div>
+ 	<div d_id="6"  class="descrioption nine" >
+ 		<span>robot pilesos samsung</span>
+ 		<button class="button" >by</button>
+ 	</div>
+
+ 	<div d_id="7"  class="descrioption nine" >
+ 		<span>yello boll danlop</span>
+ 		<button class="button" >by</button>
+ 	</div>
+ 	<div d_id="8"  class="descrioption nine" >
+ 		<span>yello boll welson</span>
+ 		<button class="button" >by</button>
+ 	</div>
+ 	<div d_id="9"  class="descrioption nine" >
+ 		<span>yello boll head</span>
+ 		<button class="button" >by</button>
+ 	</div>
+ 	<div d_id="10"  class="descrioption nine" >
+ 		<span>vodka absolut</span>
+ 		<button class="button" >by</button>
+ 	</div>
+ 	<div d_id="11"  class="descrioption nine" >
+ 		<span>pivo blansh</span>
+ 		<button class="button" >by</button>
+ 	</div>
+ 	<div d_id="12"  class="descrioption nine" >
+ 		<span>vino Don Perenon</span>
+ 		<button class="button" >by</button>
+ 	</div>
+ </div>
+ <div class="messege-buy" >
+ 	catch
+ </div>
+</div>
+
+<!-- Дано 3 блоки
+В лівій частині сторінки - перелік категорій.
+При натисканні на категорію в середній блок виводиться список товарів цієї категорії.
+Клік на товар - інформацію про товар у правому блоці.
+В інформації товару - кнопка “купити”.
+При натисканні на “купити” з'являється повідомлення, що товар куплений і повернення у вихідний стан програми ( коли відображається лише список категорій). -->
+<script type="text/javascript">
+ 
+let category = document.querySelectorAll('.category');
+
+let tovary = document.querySelectorAll('.tovary');
+
+let singlTovar = document.querySelectorAll('.singl-tovar')
+
+let descroptionTovar = document.querySelectorAll('.descrioption');
+
+let message = document.querySelector('.messege-buy');
+
+let button = document.querySelectorAll('.button');
+
+// let arrTovary = [];
+
+function pushTovary(arrV){
+
+	let arrTovary = [];
+
+	this.arrTovary = arrTovary;
+
+	arrV.forEach(function(elem){
+
+	 	arrTovary.push(elem);
+
+   });
+
+};
+
+
+function removeShow(item){
+
+	item.forEach(function(elem){
+
+		 elem.classList.remove('show');
+
+   });
+
+}
+
+function getProuct(){
+
+	let cals = new pushTovary(tovary);
+
+	let addShowProduct = cals.arrTovary.find((elemInner)=>{
+
+	   if(elemInner.getAttribute('c_id') == this.id){
+
+	      return elemInner;
+
+	    }
+
+	 });
+
+	removeShow(tovary);
+	removeShow(descroptionTovar);
+
+	addShowProduct.classList.add('show');
+
+	console.log(addShowProduct)
+
+	}
+
+
+
+function getDescription(){
+
+  	let tovCals = new pushTovary(descroptionTovar);
+
+	let singlT = tovCals.arrTovary.find((elem)=>{
+
+		if(elem.getAttribute('d_id') == this.getAttribute('st_id')){
+
+			return elem
+		}
+	});
+
+	removeShow(descroptionTovar);
+
+	singlT.classList.add('show');
+
+	
+
+	console.log(singlT)
+
+}
+
+function clicking(func,itemList){
+
+	itemList.forEach(function(elem){
+
+	elem.addEventListener('click', func.bind(elem))
+
+});
+
+}
+
+clicking(getProuct, category)
+clicking(getDescription, singlTovar);
+
+function addMessage(n){
+
+
+	button.forEach(function(elem){
+
+			elem.addEventListener('click',addMessage.bind(addMessage,1));
+
+		});
+
+	if(n == 1){
+
+			message.classList.add('show-message');
+
+		setTimeout(function(){
+
+			message.classList.remove('show-message');
+
+		},1000)
+		
+	}
+	
+}
+
+addMessage(2)
+ 
+
+
+
+// window.clientHeight - divAHeight;
+
+let messageBox =  message.clientHeight
+
+let heightWind = document.body.clientHeight - messageBox;
+
+message.style.top = document.body.clientHeight - messageBox + 'px'
+
+console.log(document.body.clientHeight);
+
+
+// function tram(){
+
+//  let vasya = "halk";
+
+//  // this.vasya = vasya;
+
+//  // console.log(this.vasya)
+// }
+
+// let gara = new tram()
+
+
+// function chopik(){
+
+//  // console.log(this);
+
+//   console.log(this.vasya)
+// }
+
+// let dft = chopik.bind(tram)
+
+// dft()
+
+</script>
+
+ <!-- <script type="text/javascript" src="main.js" ></script> -->
+ <style type="text/css">
+ 	body{
+ 		font-size: 21px;
+ 		line-height: 24px;
+ 		position: relative;
+ 		height: 1200px;
+ 	}
+  .nine{
+   display: none;
+  }
+  .show{
+ display: block;
+}
+ .wrapp{
+  	display: flex;
+ 	 margin: 0 auto;
+ 	width: 100%;
+	max-width: 780px;
+	
+ }
+ .wrap-smile{
+  margin: 10px 25px;
+ }
+ .descrioption span{
+ 	display: block;
+ }
+ .wrapp-category,
+ .wrapp-tovari,
+ .wrapp-description{
+ 	border: 1px solid blue;
+ 	padding: 25px;
+ 	margin: 0 25px 0 0;
+ }
+ button{
+ 	padding: 10px 15px;
+ 	background: yellow;
+ }
+ .messege-buy{
+ 	background: greenyellow;
+ 	padding: 15px;
+ 	width: 150px;
+ 	position: fixed;
+ 	top: 90%;
+ 	right: 0;
+ 	visibility: hidden;
+ }
+ .show-message{
+visibility: visible;
+ }
+</style>
+</body>
+</html>
