@@ -10,10 +10,11 @@
 <body>
 <div class=" wrapp" >
  <div class="wrapp-category" id="" >
-	  <div id="1" atr="1" class="category phone" atr="1"  >phone </div>
-	  <div id="2"         class="category microvolnovka" >microvolnovka </div>
-	  <div id="3"         class="category boll" >boll </div>
-	  <div id="4"         class="category drink" >drink </div>
+ 	<h2>category</h2>
+	  <div id="1"  class="category phone" atr="1"  >phone </div>
+	  <div id="2"  class="category microvolnovka" >microvolnovka </div>
+	  <div id="3"  class="category boll" >boll </div>
+	  <div id="4"  class="category drink" >drink </div>
  </div>
  <div class="wrapp-tovari" >
   <div class="tovary nine phone" c_id="1" frf="1" >
@@ -96,179 +97,10 @@
  	catch
  </div>
 </div>
-
-<!-- Дано 3 блоки
-В лівій частині сторінки - перелік категорій.
-При натисканні на категорію в середній блок виводиться список товарів цієї категорії.
-Клік на товар - інформацію про товар у правому блоці.
-В інформації товару - кнопка “купити”.
-При натисканні на “купити” з'являється повідомлення, що товар куплений і повернення у вихідний стан програми ( коли відображається лише список категорій). -->
 <script type="text/javascript">
- 
-let category = document.querySelectorAll('.category');
-
-let tovary = document.querySelectorAll('.tovary');
-
-let singlTovar = document.querySelectorAll('.singl-tovar')
-
-let descroptionTovar = document.querySelectorAll('.descrioption');
-
-let message = document.querySelector('.messege-buy');
-
-let button = document.querySelectorAll('.button');
-
-// let arrTovary = [];
-
-function pushTovary(arrV){
-
-	let arrTovary = [];
-
-	this.arrTovary = arrTovary;
-
-	arrV.forEach(function(elem){
-
-	 	arrTovary.push(elem);
-
-   });
-
-};
-
-
-function removeShow(item){
-
-	item.forEach(function(elem){
-
-		 elem.classList.remove('show');
-
-   });
-
-}
-
-function getProuct(){
-
-	let cals = new pushTovary(tovary);
-
-	let addShowProduct = cals.arrTovary.find((elemInner)=>{
-
-	   if(elemInner.getAttribute('c_id') == this.id){
-
-	      return elemInner;
-
-	    }
-
-	 });
-
-	removeShow(tovary);
-	removeShow(descroptionTovar);
-
-	addShowProduct.classList.add('show');
-
-	console.log(addShowProduct)
-
-	}
-
-
-
-function getDescription(){
-
-  	let tovCals = new pushTovary(descroptionTovar);
-
-	let singlT = tovCals.arrTovary.find((elem)=>{
-
-		if(elem.getAttribute('d_id') == this.getAttribute('st_id')){
-
-			return elem
-		}
-	});
-
-	removeShow(descroptionTovar);
-
-	singlT.classList.add('show');
-
-	
-
-	console.log(singlT)
-
-}
-
-function clicking(func,itemList){
-
-	itemList.forEach(function(elem){
-
-	elem.addEventListener('click', func.bind(elem))
-
-});
-
-}
-
-clicking(getProuct, category)
-clicking(getDescription, singlTovar);
-
-function addMessage(n){
-
-
-	button.forEach(function(elem){
-
-			elem.addEventListener('click',addMessage.bind(addMessage,1));
-
-		});
-
-	if(n == 1){
-
-			message.classList.add('show-message');
-
-		setTimeout(function(){
-
-			message.classList.remove('show-message');
-
-		},1000)
-		
-	}
-	
-}
-
-addMessage(2)
- 
-
-
-
-// window.clientHeight - divAHeight;
-
-let messageBox =  message.clientHeight
-
-let heightWind = document.body.clientHeight - messageBox;
-
-message.style.top = document.body.clientHeight - messageBox + 'px'
-
-console.log(document.body.clientHeight);
-
-
-// function tram(){
-
-//  let vasya = "halk";
-
-//  // this.vasya = vasya;
-
-//  // console.log(this.vasya)
-// }
-
-// let gara = new tram()
-
-
-// function chopik(){
-
-//  // console.log(this);
-
-//   console.log(this.vasya)
-// }
-
-// let dft = chopik.bind(tram)
-
-// dft()
-
 </script>
 
- <!-- <script type="text/javascript" src="main.js" ></script> -->
+ <script type="text/javascript" src="main.js" ></script>
  <style type="text/css">
  	body{
  		font-size: 21px;

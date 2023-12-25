@@ -1,25 +1,120 @@
+let category = document.querySelectorAll('.category');
 
-	let smile = document.querySelectorAll('.wrap-smile .smile');
+let tovary = document.querySelectorAll('.tovary');
 
-		let boxOut = document.querySelectorAll('.wrap-smile .out');
+let singlTovar = document.querySelectorAll('.singl-tovar')
 
-		smile.forEach(function(elem){
+let descroptionTovar = document.querySelectorAll('.descrioption');
 
-				let i = 0;
+let message = document.querySelector('.messege-buy');
 
-				elem.onclick = function(){
+let button = document.querySelectorAll('.button');
 
-					console.log(i)
+function pushTovary(arrV){
 
-					 i++;
+	let arrTovary = [];
 
-					let check = "";
+	this.arrTovary = arrTovary;
 
-					check = i + check;
+	arrV.forEach(function(elem){
 
-					console.log(this.nextElementSibling)
+	 	arrTovary.push(elem);
 
-					this.nextElementSibling.innerHTML = i;
-				}
+   });
+
+};
+
+function removeShow(item){
+
+	item.forEach(function(elem){
+
+		 elem.classList.remove('show');
+
+   });
+
+}
+
+function getProuct(){
+
+	let cals = new pushTovary(tovary);
+
+	let addShowProduct = cals.arrTovary.find((elemInner)=>{
+
+	   if(elemInner.getAttribute('c_id') == this.id){
+
+	      return elemInner;
+
+	    }
+
+	 });
+
+	removeShow(tovary);
+	removeShow(descroptionTovar);
+
+	addShowProduct.classList.add('show');
+
+}
+
+function getDescription(){
+
+  	let tovCals = new pushTovary(descroptionTovar);
+
+	let singlT = tovCals.arrTovary.find((elem)=>{
+
+		if(elem.getAttribute('d_id') == this.getAttribute('st_id')){
+
+			return elem
+		}
+	});
+
+	removeShow(descroptionTovar);
+
+	singlT.classList.add('show');
+
+}
+
+function clicking(func,itemList){
+
+	itemList.forEach(function(elem){
+
+	elem.addEventListener('click', func.bind(elem))
+
+});
+
+}
+
+clicking(getProuct, category)
+clicking(getDescription, singlTovar);
+
+function addMessage(n){
+
+	button.forEach(function(elem){
+
+			elem.addEventListener('click',addMessage.bind(addMessage,1));
 
 		});
+
+	if(n == 1){
+
+		message.classList.add('show-message');
+		removeShow(tovary);
+		removeShow(descroptionTovar);
+
+		setTimeout(function(){
+
+			message.classList.remove('show-message');
+
+		},1000)
+		
+	}
+	
+}
+
+addMessage(2)
+ 
+let messageBox =  message.clientHeight
+
+let heightWind = document.body.clientHeight - messageBox;
+
+message.style.top = document.body.clientHeight - messageBox + 'px';
+
