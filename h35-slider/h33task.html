@@ -23,8 +23,9 @@
              <img src="img/4.jpeg" align="" >
          </div>
      </div>
-     <button id="vperod" > vperod</button>
+   
         <button id="nazad" >nazad</button>
+          <button id="vperod" > vperod</button>
 </div>
 <script type="text/javascript">
 </script>
@@ -58,15 +59,37 @@
 /*        visibility: visible;*/
     }
     button{
-        color: red;
+        color: blue;
         cursor: pointer;
         padding: 10px 15px;
         background: yellow;
         border: none;
         border-radius: 5px;
--webkit-box-shadow: inset 0px 2px 32px -15px rgba(0,0,0,0.75);
--moz-box-shadow: inset 0px 2px 32px -15px rgba(0,0,0,0.75);
-box-shadow: inset 0px 2px 32px -15px rgba(0,0,0,0.75);
+-webkit-box-shadow: inset 0px 3px 23px -7px rgba(96,204,112,1);
+-moz-box-shadow: inset 0px 3px 23px -7px rgba(96,204,112,1);
+box-shadow: inset 0px 3px 23px -7px rgba(96,204,112,1);
+position: relative;
+    }
+    button:after{
+        content: "";
+        clear: both;
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+
+        -webkit-box-shadow: 0px 3px 23px -7px rgba(94,134,204,1);
+-moz-box-shadow: 0px 3px 23px -7px rgba(94,134,204,1);
+box-shadow: 0px 3px 23px -7px rgba(94,134,204,1);
+
+    }
+    .disabled-button{
+        opacity: 0.6;
+        cursor: none;
     }
  	
 </style>

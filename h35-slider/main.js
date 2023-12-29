@@ -6,7 +6,48 @@ function moveArrow(){
 
       let activeItem = 0;
 
+       function butoonDis(){
+
+            console.log('activeItem:',activeItem)
+
+            if(activeItem === 0){
+
+                nazad.classList.add('disabled-button');
+
+                nazad.disabled = true;
+
+            }else if(activeItem === item.length-1){
+                // vperod.style.background = 'red';
+
+                vperod.disabled = true;
+
+                vperod.classList.add('disabled-button');
+
+            }else if(activeItem < item.length-1){
+                // vperod.style.background = 'yellow';
+
+                vperod.disabled = false;
+
+                vperod.classList.remove('disabled-button');
+                nazad.classList.remove('disabled-button');
+
+                nazad.disabled = false;
+            }
+       }
+
      function darkSide(){  
+
+        console.log('out', activeItem)
+
+
+        // if(activeItem === 0 ){
+        //     console.log(1)
+        //     nazad.style.background = 'red';
+        // }else if(activeItem === item.length-1){
+
+        //      console.log(1)
+        //     vperod.style.background = 'red';
+        // }
 
             item.forEach(function(elem){
 
@@ -25,8 +66,10 @@ function moveArrow(){
 
                 }else{
 
+                    console.log('vpered-1', activeItem)
+
                     item[activeItem].classList.add('active');
-     
+
                 }
 
             }else if(event.target.id === 'nazad'){
@@ -41,6 +84,8 @@ function moveArrow(){
 
                 }else{
 
+                    console.log('nazad-2', activeItem)
+
                     item[activeItem].classList.add('active');
 
                 }
@@ -49,12 +94,19 @@ function moveArrow(){
 
     }
 
-    this.hooli = darkSide;
+    this.darkSide = darkSide;
+     this.butoonDis = butoonDis;
+
+
            
 }
 
 let newHooli = new moveArrow();
 
-    vperod.addEventListener('click',newHooli.hooli);
-    nazad.addEventListener('click',newHooli.hooli);
- 
+newHooli.butoonDis()
+
+    vperod.addEventListener('click',newHooli.darkSide);
+    nazad.addEventListener('click',newHooli.darkSide);
+
+     vperod.addEventListener('click',newHooli.butoonDis);
+ nazad.addEventListener('click',newHooli.butoonDis);
