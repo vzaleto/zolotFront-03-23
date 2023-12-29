@@ -17,14 +17,12 @@ function moveArrow(){
                 nazad.disabled = true;
 
             }else if(activeItem === item.length-1){
-                // vperod.style.background = 'red';
 
                 vperod.disabled = true;
 
                 vperod.classList.add('disabled-button');
 
             }else if(activeItem < item.length-1){
-                // vperod.style.background = 'yellow';
 
                 vperod.disabled = false;
 
@@ -36,18 +34,6 @@ function moveArrow(){
        }
 
      function darkSide(){  
-
-        console.log('out', activeItem)
-
-
-        // if(activeItem === 0 ){
-        //     console.log(1)
-        //     nazad.style.background = 'red';
-        // }else if(activeItem === item.length-1){
-
-        //      console.log(1)
-        //     vperod.style.background = 'red';
-        // }
 
             item.forEach(function(elem){
 
@@ -95,10 +81,7 @@ function moveArrow(){
     }
 
     this.darkSide = darkSide;
-     this.butoonDis = butoonDis;
-
-
-           
+     this.butoonDis = butoonDis;           
 }
 
 let newHooli = new moveArrow();
